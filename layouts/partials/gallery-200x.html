@@ -1,0 +1,5 @@
+{{with .Resources.ByType "image"}}
+{{range .}}
+<img src="{{(.Resize "200x").RelPermalink}}" />
+{{end}}
+{{end}}
