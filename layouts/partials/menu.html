@@ -1,0 +1,20 @@
+{{ $page := .}}
+{{range .Site.Home.Pages}}
+{{if not (isset .Params "hidden")}}
+{{if eq . $page}}
+<span class="active">{{.Title}}</span>
+{{else}}
+<a class="{{if .IsAncestor $page}}active {{end}}menu-{{.Section}}" href="{{.RelPermalink}}">{{.Title}}</a>
+{{end}}
+{{end}}
+{{end}}
+{{if .IsTranslated}}
+<div>
+    {{range .Translations}}
+    <span class="language {{.Language}}-language"><a href="{{ .Permalink }}"><img
+            height="15"
+            src='{{ printf "/flags/%s.png" .Language | relURL }}' alt="{{.Language.LanguageName}}"
+    ></a></span>
+    {{end}}
+</div>
+{{end}}

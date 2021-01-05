@@ -1,0 +1,18 @@
+{{define "main"}}
+<h1>{{.Title}}</h1>
+
+{{.Content}}
+
+{{with .Resources.ByType "image"}}
+    {{range .}}
+    <img src="{{(.Fill "200x100 Center").RelPermalink}}" />
+    {{end}}
+{{end}}
+
+{{with .Resources.ByType "image"}}
+{{range .}}
+<img src="{{(.Resize "200x").RelPermalink}}" />
+{{end}}
+{{end}}
+
+{{end}}

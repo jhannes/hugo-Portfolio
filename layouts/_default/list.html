@@ -1,0 +1,16 @@
+{{define "main"}}
+<h1>{{.Title}}</h1>
+
+{{range .Pages}}
+    <div>
+        <h2><a href="{{.RelPermalink}}">{{.Title}}</a></h2>
+        {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
+        {{with $img}}
+        <div>
+            <img src="{{(.Fill "200x150").RelPermalink}}">
+        </div>
+        {{end}}
+    </div>
+{{end}}
+
+{{end}}

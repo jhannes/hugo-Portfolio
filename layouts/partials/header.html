@@ -1,0 +1,20 @@
+<header>
+    <nav id="wide">
+        <a href='{{ "/" | relLangURL }}'><img class="logo" src='{{ "/logo.png" | relURL }}' alt="{{- .Site.Title -}}"></a>
+        {{- partial "menu.html" . -}}
+    </nav>
+
+    <nav id="narrow">
+        <a href='{{ "/" | relLangURL }}'><img class="logo" src='{{ "/logo.png" | relURL }}' alt="{{- .Site.Title -}}"></a>
+        <label class="nav-menu">
+            <input type="checkbox" title="Menu" />
+            <div class="menu-button" aria-hidden="true"><div class="menu-button-top"></div><div class="menu-button-middle"></div><div class="menu-button-bottom"></div></div>
+            <div class="menu-wrapper">
+                <div class="menu">
+                    <a href='{{ "/" | relLangURL }}'>{{ .Site.Home.Title }}</a>
+                    {{- partial "menu.html" . -}}
+                </div>
+            </div>
+        </label>
+    </nav>
+</header>
