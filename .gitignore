@@ -1,3 +1,4 @@
 /exampleSite/resources/_gen/
+/exampleSite/public
 /.idea
 *.iml
