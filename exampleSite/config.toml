@@ -1,0 +1,26 @@
+baseURL = "https://jhannes.github.io/hugo-Portfolio/"
+theme = "hugo-Portfolio"
+themesdir = "../.."
+defaultContentLanguage = "no"
+
+[languages]
+    [languages.no]
+        title = "GoodWork designere"
+        languageCode = "no"
+        LanguageName = "Norsk"
+        weight = 1
+        [languages.no.params]
+            notFound = "Siden finnes ikke"
+    [languages.en]
+        languageCode = "en"
+        title = "GoodWord design"
+        LanguageName = "English"
+        weight = 2
+    [languages.ru]
+        title = "хорошая работа"
+        languageCode = "ru"
+        LanguageName = "Porusskij"
+        weight = 3
+
+[params]
+    notFound = "Page not found"
