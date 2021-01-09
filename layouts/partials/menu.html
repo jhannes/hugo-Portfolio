@@ -4,14 +4,14 @@
 {{if eq . $page}}
 <span class="active">{{.Title}}</span>
 {{else}}
-<a class="{{if .IsAncestor $page}}active {{end}}menu-{{.Section}}" href="{{.RelPermalink}}">{{.Title}}</a>
+<a class="menu-item {{if .IsAncestor $page}}active {{end}}menu-{{.Section}}" href="{{.RelPermalink}}">{{.Title}}</a>
 {{end}}
 {{end}}
 {{end}}
 {{if .IsTranslated}}
-<div>
+<div class="language">
     {{range .Translations}}
-    <span class="language {{.Language}}-language"><a href="{{ .Permalink }}"><img
+    <span class="{{.Language}}-language"><a href="{{ .Permalink }}"><img
             height="15"
             src='{{ printf "/flags/%s.png" .Language | relURL }}' alt="{{.Language.LanguageName}}"
     ></a></span>
