@@ -1,7 +1,7 @@
 {{define "main"}}
 <h1>{{.Title}}</h1>
 
-{{range .Pages}}
+{{range .Pages.ByWeight.ByTitle}}
     <div>
         <h2><a href="{{.RelPermalink}}">{{.Title}}</a></h2>
         {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
